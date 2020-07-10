@@ -92,22 +92,29 @@ public class Magic  {
 	                colsum+= myArray[i][0];
 	       
 	        
-	      
-	       if(correctnumber(rowsum, colsum, lrsum, rlsum))
-	        {System.out.println("This is a magic square");}
-	        else
-	        System.out.println("This is a not a magic square");
+	         correctnumber(rowsum, colsum, lrsum, rlsum);
+	      // if(correctnumber(rowsum, colsum, lrsum, rlsum))
+	      //  {System.out.println("This is a magic square");}
+	      //  else
+	       // System.out.println("This is a not a magic square");
 	        
 	}
 	
+	public int flag=0;
 	//Method to check for magic number is correct or not
-	 public boolean correctnumber(int row1,int column1,int lrsum1,int rlsum1)
+	 public void correctnumber(int row1,int column1,int lrsum1,int rlsum1)
 	{
 		 if(row1==column1 && row1==lrsum1 && row1==rlsum1)
-			 return true;
-		 else
-			 return false;
-	}
+		 { System.out.println("true");
+		 
+		 flag=1;
+		 }
+		 else {
+			 System.out.println("false");
+			 flag=0;
+		 
+		 }
+		 }
 	//Another construction with args as Array
 	Magic (int [][] myArray)
 	{
@@ -144,10 +151,8 @@ public class Magic  {
 	                colsum+= myArray[i][0];   
 	       }
 	        
-	       if(correctnumber(rowsum, colsum, lrsum, rlsum))
-	        {System.out.println("This is a magic square");}
-	        else
-	        System.out.println("This is a not a magic square");
+	       correctnumber(rowsum, colsum, lrsum, rlsum);
+	        
 	}
 
 }
